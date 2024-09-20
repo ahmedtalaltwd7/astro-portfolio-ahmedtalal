@@ -15,11 +15,15 @@ tags:
 
 > full-stack developer 
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+Throughout my career, I have gained extensive experience with a wide array of programming languages and technologies, including C#, Ajax, ASP.NET, CSS3, HTML5, Node.js, and more. I am adept at working with various databases such as MongoDB, Firebase, CouchDB, and SQL Server, as well as deployment tools like Docker and Nginx. Additionally, I have experience utilizing WebSQL, local storage, and developing Progressive Web Apps (PWA) with offline capabilities that can seamlessly sync with online databases.
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
-
-### Level-three heading
+My technical toolkit includes modern frameworks like SvelteKit, React JS, Astro JS, and ODK Data Kit (including Kobo tools). I have successfully developed both Windows and web applications, showcasing my versatility in different development environments.
+					
+In addition to development, I have expertise in website penetration testing, identifying vulnerabilities such as SQL injection, Cross-Site Scripting (XSS), testing CRUD APIs, request headers, and JWT security implementations.
+					
+I am committed to delivering high-quality, efficient solutions for clients. My passion for problem-solving, attention to detail, and dedication to staying current with industry trends and best practices are key drivers behind my success as a developer.
+			
+<!-- ### Level-three heading
 
 Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
 
@@ -32,4 +36,4 @@ Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum qu
 #### Level-four heading
 
 - We noted this
-- And also this other point
+- And also this other point -->
