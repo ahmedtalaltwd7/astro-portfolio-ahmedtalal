@@ -11,7 +11,12 @@ import Icon from './Icon.astro';
 	</CallToAction>
 </aside>
 
+
+
+
 <style>
+
+
 	aside {
 		display: flex;
 		flex-direction: column;
@@ -30,6 +35,15 @@ import Icon from './Icon.astro';
 		max-width: 15ch;
 	}
 
+
+
+
+
+
+
+
+	
+
 	@media (min-width: 50em) {
 		aside {
 			padding: 7.5rem;
@@ -42,5 +56,9 @@ import Icon from './Icon.astro';
 			font-size: var(--text-3xl);
 			text-align: left;
 		}
+/* 
+		aside > * {
+			flex-basis: calc(50% - 1rem);
+		} */
 	}
 </style>
