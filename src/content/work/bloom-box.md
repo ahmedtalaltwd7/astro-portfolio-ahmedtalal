@@ -61,7 +61,7 @@ Professional Summary
 
 MEAL Officer & Full-Stack Developer with over 10 years of experience in Monitoring & Evaluation, Information Management, Humanitarian Programming, and Cloud Cybersecurity. Skilled in leveraging both technical and analytical expertise to enhance project impact, ensure donor compliance, and manage data effectively in complex emergency settings. Driven by a strong passion for harnessing technology to create sustainable, positive social change.
 
-Work Experience
+Work Experience 
 ---------------
 
 ### MEAL Officer – Emergency Humanitarian Response
