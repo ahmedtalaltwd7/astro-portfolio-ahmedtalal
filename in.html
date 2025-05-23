@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop PWA</title>
+    <meta name="description" content="A beautiful progressive web app shop">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #818cf8;
+            --primary-dark: #3730a3;
+            --gray-light: #f3f4f6;
+            --gray-dark: #6b7280;
+            --white: #ffffff;
+            --black: #1f2937;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--gray-light);
+            color: var(--black);
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .view-toggle button {
+            background: var(--primary-dark);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .view-toggle button:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+        
+        .view-toggle button.active {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        /* Grid View */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        /* List View */
+        .products-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .products-grid .product-card {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .products-list .product-card {
+            display: flex;
+            flex-direction: row;
+            max-height: 150px;
+        }
+        
+        .products-list .product-image {
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .products-list .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-description {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .products-list .product-description {
+            -webkit-line-clamp: 3;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-top: auto;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .add-to-cart {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .favorite-btn {
+            background: none;
+            border: none;
+            color: var(--gray-dark);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .favorite-btn.active {
+            color: #ef4444;
+        }
+        
+        .install-btn {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .products-list .product-card {
+                max-height: 120px;
+            }
+            
+            .products-list .product-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Shop PWA</div>
+            <div class="view-toggle">
+                <button id="grid-view" class="active" title="Grid View">
+                    <i class="fas fa-th"></i>
+                </button>
+                <button id="list-view" title="List View">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="products-grid" id="products-container">
+            <!-- Products will be inserted here by JavaScript -->
+        </div>
+    </main>
+    
+    <button id="install-btn" class="install-btn">
+        Install App
+    </button>
+    
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                title: "Wireless Headphones",
+                description: "Premium noise-cancelling wireless headphones with 30-hour battery life and deep bass.",
+                price: 199.99,
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            },
+            {
+                id: 2,
+                title: "Smart Watch",
+                description: "Fitness tracker with heart rate monitor, GPS, and waterproof design for swimming.",
+                price: 159.99,
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            },
+            {
+                id: 3,
+                title: "Bluetooth Speaker",
+                description: "Portable waterproof speaker with 20-hour playtime and rich 360° sound.",
+                price: 89.99,
+                image: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            },
+            {
+                id: 4,
+                title: "Laptop Backpack",
+                description: "Ergonomic backpack with USB charging port and anti-theft design for laptops up to 15.6 inches.",
+                price: 49.99,
+                image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            },
+            {
+                id: 5,
+                title: "Wireless Charger",
+                description: "Fast charging Qi-certified wireless charger with LED indicator and non-slip surface.",
+                price: 29.99,
+                image: "https://images.unsplash.com/photo-1587034866750-b6b7f5b9e9b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            },
+            {
+                id: 6,
+                title: "Gaming Mouse",
+                description: "High-precision gaming mouse with customizable RGB lighting and programmable buttons.",
+                price: 59.99,
+                image: "https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            },
+            {
+                id: 7,
+                title: "4K Action Camera",
+                description: "Waterproof action camera with 4K video, image stabilization and voice control.",
+                price: 129.99,
+                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            },
+            {
+                id: 8,
+                title: "Desk Lamp",
+                description: "Adjustable LED desk lamp with touch control and multiple brightness levels.",
+                price: 39.99,
+                image: "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            }
+        ];
+        
+        // DOM elements
+        const productsContainer = document.getElementById('products-container');
+        const gridViewBtn = document.getElementById('grid-view');
+        const listViewBtn = document.getElementById('list-view');
+        const installBtn = document.getElementById('install-btn');
+        
+        // Render products
+        function renderProducts(view = 'grid') {
+            productsContainer.innerHTML = '';
+            productsContainer.className = view === 'grid' ? 'products-grid' : 'products-list';
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-actions">
+                            <span class="product-price">$${product.price.toFixed(2)}</span>
+                            <button class="favorite-btn" data-id="${product.id}">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                    </div>
+                `;
+                
+                productsContainer.appendChild(productCard);
+            });
+        }
+        
+        // Initialize with grid view
+        renderProducts();
+        
+        // View toggle functionality
+        gridViewBtn.addEventListener('click', () => {
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+            renderProducts('grid');
+        });
+        
+        listViewBtn.addEventListener('click', () => {
+            listViewBtn.classList.add('active');
+            gridViewBtn.classList.remove('active');
+            renderProducts('list');
+        });
+        
+        // Favorite button functionality
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.favorite-btn')) {
+                const btn = e.target.closest('.favorite-btn');
+                const icon = btn.querySelector('i');
+                btn.classList.toggle('active');
+                if (btn.classList.contains('active')) {
+                    icon.classList.replace('far', 'fas');
+                } else {
+                    icon.classList.replace('fas', 'far');
+                }
+            }
+            
+            if (e.target.closest('.add-to-cart')) {
+                const btn = e.target.closest('.add-to-cart');
+                const productId = btn.dataset.id;
+                alert(`Product ${productId} added to cart!`);
+            }
+        });
+        
+        // PWA Installation
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block';
+        });
+        
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installBtn.style.display = 'none';
+                }
+                deferredPrompt = null;
+            }
+        });
+        
+        window.addEventListener('appinstalled', () => {
+            installBtn.style.display = 'none';
+            deferredPrompt = null;
+        });
+    </script>
+</body>
+</html>
