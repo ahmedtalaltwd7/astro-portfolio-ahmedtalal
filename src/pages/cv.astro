@@ -1,0 +1,278 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="CV | Ahmed Talal">
+  <div class="stack gap-20">
+    <main class="wrapper cv-page">
+      <div class="card">
+        <div class="cv-grid">
+          <aside class="cv-sidebar">
+            <h1 class="cv-name">Ahmed Talal Mohsen Mohammed</h1>
+            <p class="cv-role">MEAL Officer & Full-Stack Developer</p>
+
+            <section>
+              <h2 class="section-title">Contact</h2>
+              <ul class="cv-contact">
+                <li>Aden, Yemen</li>
+                <li>+967 772224428</li>
+                <li>
+                  <a href="mailto:info@ahmedtalal.online"
+                    >info@ahmedtalal.online</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/ahmed-talal1">LinkedIn</a
+                  >
+                </li>
+                <li><a href="https://github.com/ahmedtalaltwd7">GitHub</a></li>
+                <li>
+                  <a href="https://hub.docker.com/repositories/ahmedtalal"
+                    >Docker Hub</a
+                  >
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="section-title">Key Skills</h2>
+              <div class="cv-tags">
+                <span class="tag">MEAL framework design</span>
+                <span class="tag">CRM</span>
+                <span class="tag">PDM</span>
+                <span class="tag">Kobo / ODK</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">ASP.NET</span>
+                <span class="tag">C#</span>
+                <span class="tag">SQL / MongoDB</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Power BI</span>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="section-title">Soft Skills</h2>
+              <ul>
+                <li>Strong communication & team leadership</li>
+                <li>Adaptability in emergency environments</li>
+                <li>Creative problem-solving</li>
+                <li>Commitment to social good</li>
+              </ul>
+            </section>
+          </aside>
+
+          <section class="cv-main">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="lead">
+              MEAL Officer & Full-Stack Developer with over 10 years of
+              experience in Monitoring & Evaluation, Information Management,
+              Humanitarian Programming, and Cloud Cybersecurity. Skilled in
+              leveraging technical and analytical expertise to improve project
+              impact, ensure donor compliance, and manage data in complex
+              emergency settings.
+            </p>
+
+            <h2 class="section-title">Work Experience</h2>
+            <article class="job">
+              <h2 class="section-title">Cloud Cybersecurity Analyst</h2>
+              <p class="muted">Downzen | Downzen.com — Jan 2025 – Present</p>
+              <ul>
+                <li>Conduct risk assessments and audits of cloud systems.</li>
+                <li>
+                  Recommend security improvements to enhance the platform's
+                  cloud security posture.
+                </li>
+                <li>
+                  Analyze security events and incidents in cloud environments
+                  (SCC, Cloud Audit Logs, IAM, VPC/Firewall rules).
+                </li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h2 class="section-title">MEAL Officer – Emergency Humanitarian Response</h2>
+              <p class="muted">
+                Solidarités International | Aden, Yemen — Jan 2023 – Jan 2025
+              </p>
+              <ul>
+                <li>Managed CRM system and case archiving</li>
+                <li>
+                  Led trainings for MEAL tools across FSL, Shelter and NFI
+                </li>
+                <li>Drafted M&E reports and coordinated with donors</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h2 class="section-title">M&E Officer / Information Management Focal Point (South)</h2>
+              <p class="muted">INTERSOS | Aden, Yemen — Jan 2018 – Jan 2023</p>
+              <ul>
+                <li>
+                  Designed M&E tools for 4 governorates and managed Kobo
+                  workflows
+                </li>
+                <li>
+                  Supported cash assistance monitoring and protection
+                  verification
+                </li>
+              </ul>
+            </article>
+
+            <h2 class="section-title">Projects & Technical Experience</h2>
+            <ul>
+              <li>Built offline-first PWAs with CouchDB & PouchDB</li>
+              <li>Developed case management systems for CP / GBV programs</li>
+              <li>Integrated monitoring systems with Kobo, ODK and Firebase</li>
+            </ul>
+
+            <h2 class="section-title">Education</h2>
+            <p class="muted">
+              BSc in Computer Science — University of Aden, Yemen (2007–2012)
+            </p>
+
+            <h2 class="section-title">Certifications</h2>
+            <ul class="cert-list">
+              <li>
+                <a
+                  href="https://coursera.org/verify/professional-cert/ZMAFL1S4C4IJ"
+                  >Google Cloud Cybersecurity Certificate (2025)</a
+                >
+              </li>
+              <li>
+                <a href="https://coursera.org/verify/OP2C7QR4TWPL"
+                  >Strategies for Cloud Security Risk Management (2025)</a
+                >
+              </li>
+              <li>
+                <a href="https://coursera.org/verify/95GXBA52NT0H"
+                  >Cybersecurity for Everyone - University of Maryland (2025)</a
+                >
+              </li>
+              <li>MEAL DPro - Humanitarian Leadership Academy (2024)</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --card-gap: 2rem;
+  }
+
+  /* Outer card wrapper */
+  .card {
+    max-width: 72rem;
+    margin-inline: auto;
+    background: var(--gray-0);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    padding: 0.75rem;
+  }
+
+  /* Grid: sidebar + main */
+  .cv-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: var(--card-gap);
+    align-items: start;
+  }
+
+  /* Sidebar */
+  .cv-sidebar {
+    background: linear-gradient(
+      180deg,
+      var(--gray-900),
+      rgba(17, 17, 17, 0.95)
+    );
+    color: var(--gray-300);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+  }
+  .cv-name {
+    font-size: 1.125rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--gray-0);
+  }
+  .cv-role {
+    color: var(--gray-300);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    color: var(--gray-999);
+    margin: 0 0 0.5rem 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 0.5rem;
+  }
+
+  .cv-contact,
+  .cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--gray-200);
+  }
+  .cv-contact li {
+    margin-bottom: 0.5rem;
+  }
+  .cv-contact a {
+    color: var(--gray-0);
+    text-decoration: underline;
+  }
+
+  .cv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+  }
+  .tag {
+    background: rgba(150, 136, 136, 0.06);
+    color: var(--gray-100);
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+  }
+
+  /* Main column: keep text dark on light background for readability */
+  .cv-main {
+    background: transparent;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    color: var(--gray-800);
+  }
+  .lead {
+    color: var(--gray-700);
+    margin-bottom: 1rem;
+  }
+  .muted {
+    color: var(--gray-500);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .job + .job {
+    margin-top: 1rem;
+  }
+  .cert-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: var(--accent, #2b9edb);
+  }
+
+  @media (max-width: 880px) {
+    .cv-grid {
+      grid-template-columns: 1fr;
+    }
+    .cv-sidebar {
+      order: -1;
+    }
+  }
+</style>
