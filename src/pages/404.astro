@@ -1,8 +1,10 @@
 ---
-import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Not Found" description="404 Error — this page was not found">
-	<Hero title="Page Not Found" tagline="Not found" />
+<BaseLayout>
+  <main class="wrapper">
+    <h1>Page not found</h1>
+    <p>The site only serves the CV. <a href="/cv/">View CV</a></p>
+  </main>
 </BaseLayout>

@@ -8,49 +8,9 @@
 
 
 <url>
-  <loc>https://site.ahmedtalal.online/</loc>
-  <lastmod>2025-09-18T01:26:50+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://site.ahmedtalal.online/work/</loc>
-  <lastmod>2025-09-18T01:26:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://site.ahmedtalal.online/about/</loc>
-  <lastmod>2025-09-18T01:26:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://site.ahmedtalal.online/cv/</loc>
   <lastmod>2025-09-18T01:26:51+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://site.ahmedtalal.online/work/nested/duvet-genius</loc>
-  <lastmod>2025-09-18T01:26:51+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://site.ahmedtalal.online/work/ahmed-talal</loc>
-  <lastmod>2025-09-18T01:26:51+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://site.ahmedtalal.online/work/bloom-box</loc>
-  <lastmod>2025-09-18T01:26:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://site.ahmedtalal.online/work/markdown-mystery-tour</loc>
-  <lastmod>2025-09-18T01:26:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://site.ahmedtalal.online/work/h20</loc>
-  <lastmod>2025-09-18T01:26:52+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>1.00</priority>
 </url>
 
 
