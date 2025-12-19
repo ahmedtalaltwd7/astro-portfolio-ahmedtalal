@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const workItems = await getCollection('work');
+  return workItems.map((item) => ({
+    params: { slug: item.slug },
+    props: { project: item },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<BaseLayout title={project.data.title}>
+  <article class="work-detail">
+    <header class="work-header">
+      <h1>{project.data.title}</h1>
+      {project.data.img && (
+        <img 
+          src={project.data.img} 
+          alt={project.data.img_alt || project.data.title}
+          class="work-image"
+        />
+      )}
+      {project.data.tags && (
+        <div class="work-tags">
+          {project.data.tags.map(tag => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )}
+    </header>
+    
+    <div class="work-content">
+      <Content />
+    </div>
+    
+    <footer class="work-footer">
+      <a href="/work" class="back-link">← Back to all projects</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+.work-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.work-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.work-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.work-tags {
+  margin: 1rem 0;
+}
+
+.tag {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+}
+
+.work-content {
+  line-height: 1.6;
+}
+
+.work-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.back-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+</style>

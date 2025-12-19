@@ -1,30 +1,58 @@
-# Astro Starter Kit: Portfolio
+# Ahmed Talal - Portfolio Website
 
-```sh
-npm create astro@latest -- --template portfolio
+A modern, responsive portfolio website built with Astro, showcasing Ahmed Talal's skills, projects, and professional background.
+
+## About
+
+This is the personal portfolio website of Ahmed Talal, featuring a clean design, dark/light mode toggle, and optimized performance.
+
+## Features
+
+-  ⚡ Built with Astro for fast performance
+-  🎨 Responsive design with dark/light theme support
+-  📱 Mobile-first approach
+-  🔍 SEO optimized
+-  📝 Content collections for easy content management
+
+## Tech Stack
+
+- **Framework**: Astro
+- **Styling**: CSS with custom properties
+- **Content**: Markdown with Astro Content Collections
+- **Deployment**: Static site hosting
+
+## Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── content/       # Content collections (work, etc.)
+├── layouts/       # Page layouts
+├── pages/         # Route components
+├── styles/        # Global styles
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
+## Getting Started
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Install dependencies:
+```bash
+npm install
+```
 
-![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+2. Start the development server:
+```bash
+npm run dev
+```
 
-## 🧞 Commands
+3. Open [http://localhost:4321](http://localhost:4321) in your browser
 
-All commands are run from the root of the project, from a terminal:
+## Build
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+To build the project for production:
+```bash
+npm run build
+```
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project contains personal content and is not licensed for redistribution without permission from Ahmed Talal.

@@ -1,7 +1,7 @@
 {
-  "name": "@example/portfolio",
+  "name": "ahmed-talal-portfolio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,6 +11,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.15.4" 
+    "astro": "^4.15.4"
   }
 }

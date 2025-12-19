@@ -1,12 +1,14 @@
 ---
 interface Props {
   project: any;
+  slug: string;
 }
 
 const { data } = Astro.props.project;
+const { slug } = Astro.props;
 ---
 
-<div class="card">
+<a href={`/work/${slug}`} class="card">
   <span class="title">{data.title}</span>
   <img
     src={data.img}
@@ -14,7 +16,7 @@ const { data } = Astro.props.project;
     loading="lazy"
     decoding="async"
   />
-</div>
+</a>
 
 <style>
   .card {

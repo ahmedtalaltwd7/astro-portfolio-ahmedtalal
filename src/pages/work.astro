@@ -1,10 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import { getCollection } from 'astro:content';
+
+const workItems = await getCollection('work');
 ---
 
 <BaseLayout>
   <main class="wrapper">
-    <h1>Work (removed)</h1>
-    <p>All project pages have been removed. <a href="/cv/">View CV</a></p>
+    <h1>My Work</h1>
+    <div class="grid">
+      {workItems.map((item) => (
+        <PortfolioPreview project={item} slug={item.slug} />
+      ))}
+    </div>
   </main>
 </BaseLayout>
