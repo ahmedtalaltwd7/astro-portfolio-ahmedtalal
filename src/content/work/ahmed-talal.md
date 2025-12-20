@@ -1,5 +1,5 @@
 ---
-title: Ahmed Talal - Full Stack Developer
+title: About Me
 publishDate: 2025-12-19 00:00:00
 img: /assets/portrait.jpg
 img_alt: Professional portrait of Ahmed Talal
