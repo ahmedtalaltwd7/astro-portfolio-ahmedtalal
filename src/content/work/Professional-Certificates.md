@@ -1,7 +1,7 @@
 ---
 title: Professional Certificates
 publishDate: 2025-12-19 00:00:00
-img: /assets/portrait.jpg
+img: /assets/certificate.png
 img_alt: Professional portrait of Ahmed Talal
 description: |
   Experienced Full Stack Developer specializing in modern web technologies, cybersecurity, and innovative solutions
